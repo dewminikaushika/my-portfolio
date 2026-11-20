@@ -1,7 +1,5 @@
 
-/* ==============================
-   1. CSS VARIABLES
-================================= */
+/* CSS VARIABLES */
 
 :root {
     --primary-color: #243b55;
@@ -11,12 +9,11 @@
     --white-color: #ffffff;
     --text-color: #333333;
     --light-blue: #e8edff;
+    --home-start: #e8edff;
+    --home-end: #f4eaff;
 }
 
-
-/* ==============================
-   2. GENERAL STYLES
-================================= */
+/* GENERAL STYLES */
 
 * {
     margin: 0;
@@ -33,21 +30,33 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.7;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+/* DARK THEME */
 
-/* ==============================
-   3. HEADER
-================================= */
+body.dark-theme {
+    --primary-color: #a5b4fc;
+    --secondary-color: #a78bfa;
+    --accent-color: #8b7cf6;
+    --background-color: #151827;
+    --white-color: #22283b;
+    --text-color: #f1f2f8;
+    --light-blue: #2c3450;
+    --home-start: #252b45;
+    --home-end: #302541;
+}
+
+/* HEADER */
 
 header {
     background: linear-gradient(
         135deg,
-        var(--primary-color),
-        var(--secondary-color)
+        #243b55,
+        #6c63ff
     );
 
-    color: var(--white-color);
+    color: white;
     text-align: center;
     padding: 30px 20px;
 }
@@ -57,10 +66,7 @@ header h1 {
     margin-bottom: 20px;
 }
 
-
-/* ==============================
-   4. NAVIGATION BAR
-================================= */
+/* NAVIGATION */
 
 nav ul {
     list-style: none;
@@ -71,21 +77,24 @@ nav ul {
 }
 
 nav ul li a {
-    color: var(--white-color);
+    color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #ffd166;
 }
 
+/* THEME BUTTON */
 
-/* ==============================
-   5. ALL SECTIONS
-================================= */
+#themeToggle {
+    margin-top: 20px;
+}
+
+/* SECTIONS */
 
 section {
     background-color: var(--white-color);
@@ -93,24 +102,20 @@ section {
     max-width: 1000px;
     margin: 35px auto;
     padding: 35px;
-
     border-radius: 15px;
 
     box-shadow: 0 5px 20px rgba(36, 59, 85, 0.10);
 
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: background-color 0.3s,
+                transform 0.3s,
+                box-shadow 0.3s;
 }
 
 section:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(36, 59, 85, 0.15);
 }
 
-
-/* ==============================
-   6. SECTION HEADINGS
-================================= */
+/* SECTION HEADINGS */
 
 section h2 {
     color: var(--primary-color);
@@ -125,18 +130,15 @@ section h3 {
     margin-bottom: 12px;
 }
 
-
-/* ==============================
-   7. HOME SECTION
-================================= */
+/* HOME SECTION */
 
 #home {
     text-align: center;
 
     background: linear-gradient(
         135deg,
-        #e8edff,
-        #f4eaff
+        var(--home-start),
+        var(--home-end)
     );
 
     padding: 60px 30px;
@@ -152,10 +154,7 @@ section h3 {
     font-size: 25px;
 }
 
-
-/* ==============================
-   8. ABOUT SECTION
-================================= */
+/* ABOUT SECTION */
 
 #about {
     text-align: center;
@@ -166,66 +165,26 @@ section h3 {
     width: 200px;
     max-width: 100%;
     height: auto;
-
     margin: 20px auto;
-
     border-radius: 15px;
     border: 4px solid var(--accent-color);
-
-    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
 }
 
-
-/* ==============================
-   9. SKILLS SECTION
-================================= */
-
-#skills article {
-    background-color: var(--light-blue);
-    border-left: 5px solid var(--secondary-color);
-}
-
-
-/* ==============================
-   10. PROJECTS SECTION
-================================= */
-
-#projects article {
-    background-color: #f4eaff;
-    border-left: 5px solid var(--accent-color);
-}
-
-
-/* ==============================
-   11. EDUCATION SECTION
-================================= */
-
-#Education article {
-    background-color: var(--light-blue);
-    border-left: 5px solid var(--primary-color);
-}
-
-
-/* ==============================
-   12. ARTICLE STYLES
-================================= */
+/* ARTICLES */
 
 article {
+    background-color: var(--light-blue);
     padding: 20px;
     margin: 18px 0;
     border-radius: 10px;
 }
 
-
-/* ==============================
-   13. LINKS
-================================= */
+/* LINKS */
 
 section a {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
 section a:hover {
@@ -233,34 +192,24 @@ section a:hover {
     text-decoration: underline;
 }
 
-
-/* ==============================
-   14. BUTTONS
-================================= */
+/* BUTTONS */
 
 button {
     background: linear-gradient(
         135deg,
-        var(--primary-color),
-        var(--secondary-color)
+        #243b55,
+        #6c63ff
     );
 
-    color: var(--white-color);
-
+    color: white;
     padding: 12px 25px;
-
     border: none;
     border-radius: 8px;
-
     font-size: 15px;
     font-weight: bold;
-
     cursor: pointer;
-
     margin-top: 12px;
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
@@ -268,10 +217,7 @@ button:hover {
     box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
 }
 
-
-/* ==============================
-   15. CONTACT FORM
-================================= */
+/* CONTACT FORM */
 
 form {
     margin-top: 20px;
@@ -288,16 +234,12 @@ input,
 textarea {
     width: 100%;
     padding: 13px;
-
     margin-top: 8px;
-
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-
     font-family: Arial, sans-serif;
     font-size: 15px;
-
-    background-color: #f8faff;
+    background-color: var(--background-color);
     color: var(--text-color);
 }
 
@@ -305,30 +247,23 @@ input:focus,
 textarea:focus {
     outline: none;
     border-color: var(--secondary-color);
-
-    box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
 }
 
 textarea {
     resize: vertical;
 }
 
-
-/* ==============================
-   16. FOOTER
-================================= */
+/* FOOTER */
 
 footer {
     background: linear-gradient(
         135deg,
-        var(--primary-color),
-        var(--secondary-color)
+        #243b55,
+        #6c63ff
     );
 
-    color: var(--white-color);
-
+    color: white;
     text-align: center;
-
     padding: 25px;
     margin-top: 40px;
 }
@@ -337,10 +272,7 @@ footer p {
     margin: 5px;
 }
 
-
-/* ==============================
-   17. RESPONSIVE DESIGN
-================================= */
+/* RESPONSIVE DESIGN */
 
 @media screen and (max-width: 768px) {
 
@@ -362,7 +294,6 @@ footer p {
     }
 
 }
-
 
 @media screen and (max-width: 480px) {
 
