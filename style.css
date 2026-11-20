@@ -1,5 +1,51 @@
 
-/* DARK THEME */
+/* =================================
+   1. CSS VARIABLES
+================================= */
+
+:root {
+    --primary-color: #243b55;
+    --secondary-color: #6c63ff;
+    --accent-color: #a78bfa;
+
+    --background-color: #f3f5fc;
+    --white-color: #ffffff;
+    --text-color: #333333;
+    --light-blue: #e8edff;
+
+    --home-start: #e8edff;
+    --home-end: #f4eaff;
+}
+
+
+/* =================================
+   2. GENERAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+
+/* =================================
+   3. DARK THEME
+================================= */
 
 body.dark-theme {
     --primary-color: #c4b5fd;
@@ -9,28 +55,332 @@ body.dark-theme {
     --background-color: #080b16;
     --white-color: #171b2e;
     --text-color: #f8fafc;
-
     --light-blue: #24213b;
+
     --home-start: #17152c;
     --home-end: #261b3d;
 }
 
-/* Dark Theme Header */
+
+/* =================================
+   4. HEADER
+================================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #243b55,
+        #6c63ff
+    );
+
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
 body.dark-theme header {
-    background: linear-gradient(135deg, #080b16, #31205c);
+    background: linear-gradient(
+        135deg,
+        #080b16,
+        #31205c
+    );
 }
 
-/* Dark Theme Footer */
-body.dark-theme footer {
-    background: linear-gradient(135deg, #080b16, #31205c);
+
+/* =================================
+   5. NAVIGATION BAR
+================================= */
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 25px;
 }
 
-/* Dark Theme Articles */
-body.dark-theme article {
-    background-color: #24213b;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: color 0.3s ease;
 }
+
+nav ul li a:hover {
+    color: #ffd166;
+}
+
+
+/* =================================
+   6. THEME BUTTON
+================================= */
+
+#themeToggle {
+    margin-top: 20px;
+}
+
+
+/* =================================
+   7. ALL SECTIONS
+================================= */
+
+section {
+    background-color: var(--white-color);
+
+    width: 85%;
+    max-width: 1000px;
+
+    margin: 35px auto;
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(36, 59, 85, 0.10);
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 25px rgba(36, 59, 85, 0.15);
+}
+
+body.dark-theme section {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =================================
+   8. SECTION HEADINGS
+================================= */
+
+section h2 {
+    color: var(--primary-color);
+
+    text-align: center;
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+section h3 {
+    color: var(--secondary-color);
+
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+
+/* =================================
+   9. HOME SECTION
+================================= */
+
+#home {
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        var(--home-start),
+        var(--home-end)
+    );
+
+    padding: 60px 30px;
+}
+
+#home h2 {
+    color: var(--secondary-color);
+    font-size: 32px;
+}
+
+#home h3 {
+    color: var(--primary-color);
+    font-size: 25px;
+}
+
+
+/* =================================
+   10. ABOUT SECTION
+================================= */
+
+#about {
+    text-align: center;
+}
+
+#about img {
+    display: block;
+
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+
+    margin: 20px auto;
+
+    border-radius: 15px;
+    border: 4px solid var(--accent-color);
+
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+}
+
+
+/* =================================
+   11. SKILLS SECTION
+================================= */
+
+#skills article {
+    background-color: var(--light-blue);
+    border-left: 5px solid var(--secondary-color);
+}
+
+
+/* =================================
+   12. PROJECTS SECTION
+================================= */
+
+#projects article {
+    background-color: var(--light-blue);
+    border-left: 5px solid var(--accent-color);
+}
+
+
+/* =================================
+   13. EDUCATION SECTION
+================================= */
+
+#Education article {
+    background-color: var(--light-blue);
+    border-left: 5px solid var(--primary-color);
+}
+
+
+/* =================================
+   14. ARTICLE STYLES
+================================= */
+
+article {
+    padding: 20px;
+    margin: 18px 0;
+
+    border-radius: 10px;
+}
+
+
+/* =================================
+   15. LINKS
+================================= */
+
+section a {
+    color: var(--secondary-color);
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: color 0.3s ease;
+}
+
+section a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+
+/* =================================
+   16. BUTTONS
+================================= */
+
+button {
+    background: linear-gradient(
+        135deg,
+        #243b55,
+        #6c63ff
+    );
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    margin-top: 12px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+
+/* =================================
+   17. CONTACT FORM
+================================= */
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+
+    color: var(--primary-color);
+    font-weight: bold;
+
+    margin-top: 12px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px;
+
+    margin-top: 8px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: var(--secondary-color);
+
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+}
+
+textarea {
+    resize: vertical;
+}
+
 
 /* Dark Theme Form */
+
 body.dark-theme input,
 body.dark-theme textarea {
     background-color: #24213b;
@@ -38,12 +388,99 @@ body.dark-theme textarea {
     border-color: #514477;
 }
 
-/* Dark Theme Labels */
 body.dark-theme label {
     color: #c4b5fd;
 }
 
-/* Dark Theme Section Shadows */
-body.dark-theme section {
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+
+/* =================================
+   18. FOOTER
+================================= */
+
+footer {
+    background: linear-gradient(
+        135deg,
+        #243b55,
+        #6c63ff
+    );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+body.dark-theme footer {
+    background: linear-gradient(
+        135deg,
+        #080b16,
+        #31205c
+    );
+}
+
+
+/* =================================
+   19. RESPONSIVE DESIGN
+================================= */
+
+@media screen and (max-width: 768px) {
+
+    header {
+        padding: 25px 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    section {
+        width: 92%;
+        padding: 25px;
+    }
+
+    #home h2 {
+        font-size: 26px;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    section {
+        width: 94%;
+        padding: 18px;
+    }
+
+    section h2 {
+        font-size: 23px;
+    }
+
+    #home {
+        padding: 40px 18px;
+    }
+
+    #home h2 {
+        font-size: 23px;
+    }
+
+    #home h3 {
+        font-size: 20px;
+    }
+
 }
