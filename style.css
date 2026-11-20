@@ -1,32 +1,67 @@
 
-/* General Styles */
+/* ==============================
+   1. CSS VARIABLES
+================================= */
+
+:root {
+    --primary-color: #243b55;
+    --secondary-color: #6c63ff;
+    --accent-color: #a78bfa;
+    --background-color: #f3f5fc;
+    --white-color: #ffffff;
+    --text-color: #333333;
+    --light-blue: #e8edff;
+}
+
+
+/* ==============================
+   2. GENERAL STYLES
+================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-    line-height: 1.6;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Header */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   3. HEADER
+================================= */
+
 header {
-    background-color: #243b55;
-    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: var(--white-color);
     text-align: center;
-    padding: 25px;
+    padding: 30px 20px;
 }
 
 header h1 {
-    margin-bottom: 15px;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
-/* Navigation Bar */
+
+/* ==============================
+   4. NAVIGATION BAR
+================================= */
+
 nav ul {
     list-style: none;
     display: flex;
@@ -36,126 +71,281 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--white-color);
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.3s;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #ffd166;
 }
 
-/* All Sections */
+
+/* ==============================
+   5. ALL SECTIONS
+================================= */
+
 section {
-    background-color: white;
-    margin: 30px auto;
-    padding: 30px;
+    background-color: var(--white-color);
     width: 85%;
     max-width: 1000px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin: 35px auto;
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(36, 59, 85, 0.10);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-/* Section Headings */
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(36, 59, 85, 0.15);
+}
+
+
+/* ==============================
+   6. SECTION HEADINGS
+================================= */
+
 section h2 {
-    color: #243b55;
-    margin-bottom: 20px;
+    color: var(--primary-color);
     text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
 }
 
 section h3 {
-    color: #42617f;
+    color: var(--secondary-color);
     margin-top: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-/* About Section Image */
+
+/* ==============================
+   7. HOME SECTION
+================================= */
+
+#home {
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #e8edff,
+        #f4eaff
+    );
+
+    padding: 60px 30px;
+}
+
+#home h2 {
+    color: var(--secondary-color);
+    font-size: 32px;
+}
+
+#home h3 {
+    color: var(--primary-color);
+    font-size: 25px;
+}
+
+
+/* ==============================
+   8. ABOUT SECTION
+================================= */
+
+#about {
+    text-align: center;
+}
+
 #about img {
     display: block;
     width: 200px;
     max-width: 100%;
     height: auto;
+
     margin: 20px auto;
+
+    border-radius: 15px;
+    border: 4px solid var(--accent-color);
+
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+}
+
+
+/* ==============================
+   9. SKILLS SECTION
+================================= */
+
+#skills article {
+    background-color: var(--light-blue);
+    border-left: 5px solid var(--secondary-color);
+}
+
+
+/* ==============================
+   10. PROJECTS SECTION
+================================= */
+
+#projects article {
+    background-color: #f4eaff;
+    border-left: 5px solid var(--accent-color);
+}
+
+
+/* ==============================
+   11. EDUCATION SECTION
+================================= */
+
+#Education article {
+    background-color: var(--light-blue);
+    border-left: 5px solid var(--primary-color);
+}
+
+
+/* ==============================
+   12. ARTICLE STYLES
+================================= */
+
+article {
+    padding: 20px;
+    margin: 18px 0;
     border-radius: 10px;
 }
 
-/* Paragraphs */
-p {
-    margin-bottom: 15px;
-}
 
-/* Links */
+/* ==============================
+   13. LINKS
+================================= */
+
 section a {
-    color: #2874a6;
+    color: var(--secondary-color);
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 section a:hover {
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
-/* Buttons */
+
+/* ==============================
+   14. BUTTONS
+================================= */
+
 button {
-    background-color: #243b55;
-    color: white;
-    padding: 10px 20px;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: var(--white-color);
+
+    padding: 12px 25px;
+
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
     cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+
+    margin-top: 12px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 button:hover {
-    background-color: #42617f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
 }
 
-/* Skills and Projects */
-article {
-    background-color: #f4f6f9;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 8px;
-}
 
-/* Contact Form */
+/* ==============================
+   15. CONTACT FORM
+================================= */
+
 form {
     margin-top: 20px;
+}
+
+label {
+    display: block;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 12px;
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 12px;
+    padding: 13px;
+
     margin-top: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
     font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    background-color: #f8faff;
+    color: var(--text-color);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
 }
 
 textarea {
     resize: vertical;
 }
 
-/* Footer */
+
+/* ==============================
+   16. FOOTER
+================================= */
+
 footer {
-    background-color: #243b55;
-    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: var(--white-color);
+
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+
+    padding: 25px;
+    margin-top: 40px;
 }
 
 footer p {
     margin: 5px;
 }
 
-/* Responsive Design */
+
+/* ==============================
+   17. RESPONSIVE DESIGN
+================================= */
+
 @media screen and (max-width: 768px) {
 
     header {
-        padding: 20px 10px;
+        padding: 25px 15px;
     }
 
     nav ul {
@@ -164,25 +354,46 @@ footer p {
 
     section {
         width: 92%;
-        padding: 20px;
+        padding: 25px;
+    }
+
+    #home h2 {
+        font-size: 26px;
     }
 
 }
 
+
 @media screen and (max-width: 480px) {
+
+    header h1 {
+        font-size: 25px;
+    }
 
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
     }
 
     section {
-        width: 95%;
-        padding: 15px;
+        width: 94%;
+        padding: 18px;
     }
 
-    header h1 {
-        font-size: 24px;
+    section h2 {
+        font-size: 23px;
+    }
+
+    #home {
+        padding: 40px 18px;
+    }
+
+    #home h2 {
+        font-size: 23px;
+    }
+
+    #home h3 {
+        font-size: 20px;
     }
 
 }
