@@ -4,22 +4,33 @@
 ================================= */
 
 :root {
-    --primary-color: #243b55;
-    --secondary-color: #6c63ff;
-    --accent-color: #a78bfa;
-
-    --background-color: #f3f5fc;
+    --primary-color: #142b49;
+    --secondary-color: #243b55;
+    --accent-color: #6c63ff;
+    --background-color: #eef2f7;
     --white-color: #ffffff;
-    --text-color: #333333;
-    --light-blue: #e8edff;
-
-    --home-start: #e8edff;
-    --home-end: #f4eaff;
+    --text-color: #263449;
+    --card-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.15);
 }
 
+/* =================================
+   2. DARK THEME
+================================= */
+
+body.dark-theme {
+    --primary-color: #080f1c;
+    --secondary-color: #14243b;
+    --accent-color: #a78bfa;
+    --background-color: #101827;
+    --white-color: #1c2a3d;
+    --text-color: #edf2fa;
+    --card-color: #1c2a3d;
+    --shadow-color: rgba(0, 0, 0, 0.35);
+}
 
 /* =================================
-   2. GENERAL STYLES
+   3. GENERAL STYLES
 ================================= */
 
 * {
@@ -30,67 +41,49 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 110px;
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.7;
-
-    transition: background-color 0.3s ease,
-                color 0.3s ease;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-
-/* =================================
-   3. DARK THEME
-================================= */
-
-body.dark-theme {
-    --primary-color: #c4b5fd;
-    --secondary-color: #a78bfa;
-    --accent-color: #7c3aed;
-
-    --background-color: #080b16;
-    --white-color: #171b2e;
-    --text-color: #f8fafc;
-    --light-blue: #24213b;
-
-    --home-start: #17152c;
-    --home-end: #261b3d;
+h1, h2, h3 {
+    line-height: 1.3;
 }
 
+h2 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 12px;
+}
 
 /* =================================
    4. HEADER
 ================================= */
 
 header {
-    background: linear-gradient(
-        135deg,
-        #243b55,
-        #6c63ff
-    );
-
+    background-color: var(--primary-color);
     color: white;
+    padding: 20px;
     text-align: center;
-    padding: 30px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px var(--shadow-color);
 }
 
 header h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
-
-body.dark-theme header {
-    background: linear-gradient(
-        135deg,
-        #080b16,
-        #31205c
-    );
-}
-
 
 /* =================================
    5. NAVIGATION BAR
@@ -98,121 +91,73 @@ body.dark-theme header {
 
 nav ul {
     list-style: none;
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
-    gap: 25px;
+    gap: 22px;
+    margin: 12px 0;
 }
 
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
-
-    font-size: 16px;
     font-weight: bold;
-
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #ffd166;
+nav a:hover {
+    color: #a78bfa;
 }
-
 
 /* =================================
-   6. THEME BUTTON
+   6. MAIN SECTIONS
 ================================= */
 
-#themeToggle {
-    margin-top: 20px;
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
 }
-
-
-/* =================================
-   7. ALL SECTIONS
-================================= */
 
 section {
-    background-color: var(--white-color);
-
-    width: 85%;
-    max-width: 1000px;
-
-    margin: 35px auto;
+    background-color: var(--card-color);
+    margin: 30px 0;
     padding: 35px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 20px rgba(36, 59, 85, 0.10);
-
-    transition: background-color 0.3s ease,
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px var(--shadow-color);
+    animation: fadeIn 0.7s ease;
 }
-
-section:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 8px 25px rgba(36, 59, 85, 0.15);
-}
-
-body.dark-theme section {
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
-}
-
 
 /* =================================
-   8. SECTION HEADINGS
+   7. HOME SECTION
 ================================= */
 
-section h2 {
-    color: var(--primary-color);
-
+.home-section {
+    min-height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 28px;
-
-    margin-bottom: 25px;
+    background: linear-gradient(135deg, #142b49, #394e78);
+    color: white;
 }
 
-section h3 {
-    color: var(--secondary-color);
-
-    margin-top: 15px;
-    margin-bottom: 12px;
-}
-
-
-/* =================================
-   9. HOME SECTION
-================================= */
-
-#home {
-    text-align: center;
-
-    background: linear-gradient(
-        135deg,
-        var(--home-start),
-        var(--home-end)
-    );
-
-    padding: 60px 30px;
-}
-
-#home h2 {
-    color: var(--secondary-color);
+.home-content h2 {
+    color: white;
     font-size: 32px;
 }
 
-#home h3 {
-    color: var(--primary-color);
+.home-content h3 {
     font-size: 25px;
+    margin: 15px 0;
 }
 
+.home-content p {
+    margin-bottom: 25px;
+}
 
 /* =================================
-   10. ABOUT SECTION
+   8. ABOUT SECTION
 ================================= */
 
 #about {
@@ -220,267 +165,310 @@ section h3 {
 }
 
 #about img {
-    display: block;
-
     width: 200px;
-    max-width: 100%;
-    height: auto;
-
-    margin: 20px auto;
-
-    border-radius: 15px;
-    border: 4px solid var(--accent-color);
-
-    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--accent-color);
+    margin-bottom: 20px;
 }
 
-
 /* =================================
-   11. SKILLS SECTION
+   9. SKILLS AND EDUCATION
 ================================= */
 
-#skills article {
-    background-color: var(--light-blue);
-    border-left: 5px solid var(--secondary-color);
-}
-
-
-/* =================================
-   12. PROJECTS SECTION
-================================= */
-
-#projects article {
-    background-color: var(--light-blue);
-    border-left: 5px solid var(--accent-color);
-}
-
-
-/* =================================
-   13. EDUCATION SECTION
-================================= */
-
-#Education article {
-    background-color: var(--light-blue);
-    border-left: 5px solid var(--primary-color);
-}
-
-
-/* =================================
-   14. ARTICLE STYLES
-================================= */
-
-article {
+.info-card {
+    background-color: var(--background-color);
     padding: 20px;
-    margin: 18px 0;
-
-    border-radius: 10px;
-}
-
-
-/* =================================
-   15. LINKS
-================================= */
-
-section a {
-    color: var(--secondary-color);
-
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: color 0.3s ease;
-}
-
-section a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
-
-/* =================================
-   16. BUTTONS
-================================= */
-
-button {
-    background: linear-gradient(
-        135deg,
-        #243b55,
-        #6c63ff
-    );
-
-    color: white;
-
-    padding: 12px 25px;
-
-    border: none;
+    margin: 15px 0;
+    border-left: 5px solid var(--accent-color);
     border-radius: 8px;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    cursor: pointer;
-    margin-top: 12px;
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px var(--shadow-color);
 }
 
+.info-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
 
 /* =================================
-   17. CONTACT FORM
+   10. PROJECTS
 ================================= */
 
-form {
+.project-card {
+    background-color: var(--background-color);
+    padding: 22px;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.project-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 12px;
+}
+
+.repository-heading {
+    margin-top: 35px;
+}
+
+/* =================================
+   11. EXPANDABLE PROJECT DETAILS
+================================= */
+
+.project-details {
+    margin-top: 18px;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-details summary {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.project-details summary:hover {
+    background-color: var(--accent-color);
+}
+
+.project-details summary:focus-visible {
+    outline: 3px solid #f5c542;
+    outline-offset: -3px;
+}
+
+.details-content {
+    padding: 18px;
+    background-color: var(--card-color);
+}
+
+/* =================================
+   12. GITHUB REPOSITORIES
+================================= */
+
+#githubProjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
     margin-top: 20px;
 }
 
-label {
-    display: block;
-
-    color: var(--primary-color);
-    font-weight: bold;
-
-    margin-top: 12px;
+.repo-card {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    border-top: 4px solid var(--accent-color);
+    box-shadow: 0 3px 10px var(--shadow-color);
+    transition: transform 0.3s;
+    overflow-wrap: anywhere;
 }
 
-input,
-textarea {
-    width: 100%;
-    padding: 13px;
+.repo-card:hover {
+    transform: translateY(-5px);
+}
 
-    margin-top: 8px;
+.repo-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
 
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
+/* =================================
+   13. LINKS AND BUTTONS
+================================= */
 
-    font-family: Arial, sans-serif;
+a {
+    color: var(--accent-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button-link,
+button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
     font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
 
+.button-link:hover,
+button:hover {
+    background-color: #5148d8;
+    transform: translateY(-2px);
+}
+
+/* =================================
+   14. CONTACT FORM
+================================= */
+
+#contactForm {
+    max-width: 600px;
+    margin: auto;
+}
+
+#contactForm label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: bold;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #9aa8ba;
+    border-radius: 6px;
     background-color: var(--background-color);
     color: var(--text-color);
+    font-size: 15px;
+    margin-bottom: 12px;
 }
 
-input:focus,
-textarea:focus {
-    outline: none;
-
-    border-color: var(--secondary-color);
-
-    box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
-}
-
-textarea {
+#contactForm textarea {
     resize: vertical;
 }
 
+/* =================================
+   15. KEYBOARD ACCESSIBILITY
+================================= */
 
-/* Dark Theme Form */
-
-body.dark-theme input,
-body.dark-theme textarea {
-    background-color: #24213b;
-    color: #ffffff;
-    border-color: #514477;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f5a623;
+    outline-offset: 3px;
 }
-
-body.dark-theme label {
-    color: #c4b5fd;
-}
-
 
 /* =================================
-   18. FOOTER
+   16. FOOTER
 ================================= */
 
 footer {
-    background: linear-gradient(
-        135deg,
-        #243b55,
-        #6c63ff
-    );
-
+    background-color: var(--primary-color);
     color: white;
-
     text-align: center;
-
     padding: 25px;
-    margin-top: 40px;
+    margin-top: 35px;
 }
 
 footer p {
-    margin: 5px;
+    margin: 5px 0;
 }
-
-body.dark-theme footer {
-    background: linear-gradient(
-        135deg,
-        #080b16,
-        #31205c
-    );
-}
-
 
 /* =================================
-   19. RESPONSIVE DESIGN
+   17. ANIMATION
 ================================= */
 
-@media screen and (max-width: 768px) {
-
-    header {
-        padding: 25px 15px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
     }
 
-    nav ul {
-        gap: 15px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================
+   18. TABLET RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+    main {
+        width: 94%;
     }
 
     section {
-        width: 92%;
         padding: 25px;
     }
 
-    #home h2 {
-        font-size: 26px;
+    nav ul {
+        gap: 14px;
     }
 
+    .home-content h2 {
+        font-size: 27px;
+    }
 }
 
+/* =================================
+   19. MOBILE RESPONSIVE DESIGN
+================================= */
 
-@media screen and (max-width: 480px) {
-
-    header h1 {
-        font-size: 25px;
+@media (max-width: 480px) {
+    header {
+        padding: 15px 10px;
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 12px;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    main {
+        width: 95%;
     }
 
     section {
-        width: 94%;
-        padding: 18px;
+        padding: 20px 15px;
+        margin: 20px 0;
     }
 
-    section h2 {
+    .home-section {
+        min-height: 320px;
+    }
+
+    .home-content h2 {
         font-size: 23px;
     }
 
-    #home {
-        padding: 40px 18px;
-    }
-
-    #home h2 {
-        font-size: 23px;
-    }
-
-    #home h3 {
+    .home-content h3 {
         font-size: 20px;
     }
 
+    #about img {
+        width: 160px;
+        height: 160px;
+    }
+
+    #githubProjects {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =================================
+   20. REDUCED MOTION ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }

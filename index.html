@@ -1,11 +1,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Yashini's personal portfolio website">
     <title>My Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
@@ -14,203 +13,205 @@
 
 <body>
 
-    <!-- Header and Navbar -->
+    <!-- Header and Navigation -->
     <header>
-
         <h1>My Portfolio</h1>
 
-        <nav>
+        <nav aria-label="Main Navigation">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#Education">Education</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
-        <!-- Theme Toggle Button -->
-        <button type="button" id="themeToggle">
+        <button type="button" id="themeToggle" aria-label="Toggle dark mode">
             🌙 Dark Mode
         </button>
-
     </header>
 
     <main>
 
         <!-- Home Section -->
-        <section id="home">
-
-            <h2>Welcome to My Portfolio</h2>
-
-            <h3>Hello, I'm Yashini</h3>
-
-            <p>
-                I am a Software Engineering student.
-                I am passionate about technology and programming.
-                Welcome to my personal portfolio website.
-            </p>
-
-            <a href="#contact">Contact Me</a>
-
+        <section id="home" class="home-section">
+            <div class="home-content">
+                <h2>Welcome to My Portfolio</h2>
+                <h3>Hello, I'm Yashini</h3>
+                <p>
+                    I am a Software Engineering student.
+                    I am passionate about technology and programming.
+                </p>
+                <a href="#contact" class="button-link">Contact Me</a>
+            </div>
         </section>
 
-        <!-- About Me Section -->
+        <!-- About Section -->
         <section id="about">
-
             <h2>About Me</h2>
 
-            <img src="image/WhatsApp Image 2026-07-21 at 08.38.20.jpeg"
-                 alt="My portfolio photo"
-                 width="200">
+            <img
+                src="image/WhatsApp Image 2026-07-21 at 08.38.20.jpeg"
+                alt="My portfolio photo"
+                width="200"
+            >
 
             <p>
-                Hello! I'am a student and Software Engineering Student.
+                Hello! I am a Software Engineering student.
                 I am interested in technology and programming.
                 I enjoy learning new things and creating projects.
             </p>
 
-            <a href="https://github.com/dewminikaushika?tab=repositories"
-               target="_blank">
-                Visit My GitHub
-            </a>
+            <p>
+                <a
+                    href="https://github.com/dewminikaushika?tab=repositories"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visit My GitHub
+                </a>
+            </p>
 
-            <button type="button">Contact Me</button>
-
+            <button type="button" id="aboutContactButton">
+                Contact Me
+            </button>
         </section>
 
         <!-- Skills Section -->
         <section id="skills">
-
             <h2>My Skills</h2>
 
-            <article>
+            <article class="info-card">
                 <h3>HTML5</h3>
-                <p>Currently Learning</p>
+                <p>Basic knowledge of HTML5 structure and elements.</p>
             </article>
 
+            <article class="info-card">
+                <h3>CSS3</h3>
+                <p>Learning website styling, colours and responsive design.</p>
+            </article>
+
+            <article class="info-card">
+                <h3>JavaScript</h3>
+                <p>Currently learning JavaScript programming.</p>
+            </article>
+
+            <article class="info-card">
+                <h3>Currently Learning</h3>
+                <p>Software Engineering and programming concepts.</p>
+            </article>
         </section>
 
         <!-- Projects Section -->
         <section id="projects">
-
             <h2>My Projects</h2>
 
-            <article>
-
+            <article class="project-card">
                 <h3>Personal Portfolio Website</h3>
 
                 <p>
-                    I am currently developing my personal portfolio
-                    website using HTML5, CSS3 and JavaScript.
+                    This is my personal portfolio website created
+                    using HTML5, CSS3 and JavaScript.
                 </p>
 
-                <p>Status: In Progress</p>
+                <p><strong>Status:</strong> In Progress</p>
 
+                <!-- Expandable Project Details -->
+                <details class="project-details">
+                    <summary>View Project Details</summary>
+
+                    <div class="details-content">
+                        <p>
+                            This project introduces my background,
+                            skills, education and projects.
+                        </p>
+
+                        <p>
+                            It includes responsive design,
+                            dark and light mode, smooth scrolling
+                            and GitHub repository integration.
+                        </p>
+                    </div>
+                </details>
             </article>
 
+            <h2 class="repository-heading">My GitHub Repositories</h2>
+
+            <div id="githubProjects" aria-live="polite">
+                <p>Loading GitHub repositories...</p>
+            </div>
         </section>
 
         <!-- Education Section -->
-        <section id="Education">
-
+        <section id="education">
             <h2>My Education</h2>
 
-            <article>
-
+            <article class="info-card">
                 <h3>School Education</h3>
-
-                <p>
-                    School Name: R/Sri Buddha Jayanthi Central Collage
-                    <br>
-                    R/Udagama Maha Vidyala
-                </p>
-
-                <p>Year: 2012-2024</p>
-
-                <p>
-                    Qualification: G.C.E. Ordinary Level (O/L)
-                    <br>
-                    G.C.E. Advanced Level (A/L)
-                </p>
-
+                <p>R/Sri Buddha Jayanthi Central College</p>
+                <p>R/Udagama Maha Vidyalaya</p>
+                <p>2012 - 2024</p>
+                <p>G.C.E. Ordinary Level and Advanced Level</p>
             </article>
 
-            <article>
-
+            <article class="info-card">
                 <h3>English Education</h3>
-
-                <p>Institute Name: Britishway English Academy</p>
-                <p>Course: English Language</p>
-                <p>Status: Completed</p>
-
+                <p>Britishway English Academy</p>
+                <p>English Language</p>
+                <p>Completed</p>
             </article>
 
-            <article>
-
+            <article class="info-card">
                 <h3>Higher Education</h3>
-
-                <p>Course: Software Engineering</p>
-                <p>Status: Currently Studying</p>
-
+                <p>Software Engineering</p>
+                <p>Currently Studying</p>
             </article>
-
         </section>
 
         <!-- Contact Section -->
         <section id="contact">
-
             <h2>Contact Me</h2>
 
-            <p>Send me a message.</p>
+            <form id="contactForm">
+                <label for="name">Your Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
 
-            <form action="#" method="post">
+                <label for="email">Your Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
 
-                <label for="name">Your Name:</label>
-
-                <input type="text"
-                       id="name"
-                       name="name"
-                       placeholder="Enter Your Name"
-                       required>
-
-                <br><br>
-
-                <label for="email">Your Email:</label>
-
-                <input type="email"
-                       id="email"
-                       name="email"
-                       placeholder="Enter Your Email"
-                       required>
-
-                <br><br>
-
-                <label for="message">Your Message:</label>
-
-                <textarea id="message"
-                          name="message"
-                          placeholder="Write Your Message"
-                          rows="5"
-                          required></textarea>
-
-                <br><br>
+                <label for="message">Your Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Write your message"
+                    required
+                ></textarea>
 
                 <button type="submit">Send Message</button>
-
             </form>
-
         </section>
 
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-
         <p>&copy; 2026 My Portfolio. All Rights Reserved.</p>
         <p>Created by Yashini</p>
-
     </footer>
 
 </body>
